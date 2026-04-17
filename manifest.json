@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AI Auto Prompter",
+  "version": "1.0",
+  "description": "Automatically optimizes and controls AI responses.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Auto Prompter"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chatgpt.com/*",
+        "*://gemini.google.com/*",
+        "*://*.chatgpt.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
